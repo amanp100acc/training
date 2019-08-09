@@ -1,0 +1,26 @@
+SQL
+---
+
+1) Query to identify the duplicates in a table:
+
+select * from emp group by emp_id having count(*)>1;
+
+2) Write the query to find the second highest salary:
+
+select max(salary) from emp where salary < (select max(salary) from emp);
+
+3)Query to find the three highest salaries in a table:
+
+select salary from emp order by salary desc limit 3;
+
+4)Write a query to display the name of the employees who have joined in 2016 and have salary greater than 10000:
+
+select Emp_name from emp where joindate = 2016 and salary > 10000;
+
+5)Query to get the department names for the employees:
+
+select e.emp_name, d.dept_name from emp e join dept d on e.deptid = d.deptid;
+
+6)Query to find the departments which are present in employee table but not in department table:
+
+select deptid from emp minus select deptid from dept;
