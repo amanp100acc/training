@@ -1,0 +1,61 @@
+Q1. 
+Write a function named collatz() that has one parameter named number. If
+number is even, then collatz() should print number // 2 and return this value.
+If number is odd, then collatz() should print and return 3 * number + 1.
+Then write a program that lets the user type in an integer and that keeps
+calling collatz() on that number until the function returns the value 1.
+(Amazingly enough, this sequence actually works for any integer—sooner
+or later, using this sequence, you’ll arrive at 1! Even mathematicians aren’t
+sure why. Your program is exploring what’s called the Collatz sequence, sometimes
+called “the simplest impossible math problem.”)
+Remember to convert the return value from input() to an integer with
+the int() function; otherwise, it will be a string value.
+
+---------------------------------------------------------------------------------------
+
+def collatz(number):
+    if number % 2 == 0:
+        print(number // 2)
+        return (number // 2)
+    else:
+        print(3 * number + 1)
+        return (3 * number + 1)
+        
+print("Enter the number: ")
+try:
+    num = int(input())
+    if (num == 0 or num == 1):
+        print("0s and 1s not allowed")
+    else:
+        c = 0
+        while num != 1:
+            x = collatz(num)
+            num = x
+            c += 1
+        print("No. of iterations=", c)			//Gives the no. of iterations
+except:
+    print("Only integers allowed")
+----------------------------------------------------------------------------------------
+
+Q2.
+Make a file containing user's name, age, DOB, Gender as .txt and read and write this file with the help of python code.
+-----------------------------------------------------------------------------------------------------------------------
+
+with open("Userdetails.txt", 'r') as open_file:
+    all_text = open_file.read()
+with open("UD.txt", 'w') as o_file:
+    o_file.write(all_text)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Q3.
+Write a logic to iterate through nested dictionaries.
+
+------------------------------------------------------------
+
+d = {'dict1': {'foo': 1, 'bar': 2}, 'dict2': {'baz': 3, 'quux': 4}}
+
+for i in d.keys():
+    print(i)
+    for j in d[i].keys(): 
+        print(j) 
