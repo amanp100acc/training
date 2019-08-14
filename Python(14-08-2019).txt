@@ -1,0 +1,36 @@
+Q1.
+Write a python code to convert timestamp into date format.
+
+----------------------------------------------------------
+
+from datetime import datetime
+now = datetime.now()
+print(now)
+print(now.strftime("%x"))
+-----------------------------------------------------------
+
+Q2.
+Print today's and yesterday's date using the system date.
+
+------------------------------------------------------------
+
+from datetime import datetime
+from datetime import timedelta
+now = datetime.now()
+print("Today's date: " + str(now.strftime("%x")))
+print("Yesterday's date: " + str((now-timedelta(days = 1)).strftime("%x")))
+                             
+Q3.
+Previous month's first and last date.
+--------------------------------------------------------------------------
+
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
+from dateutil.relativedelta import relativedelta
+today = date.today()
+x = (today - relativedelta(months = 1))
+h = date(x.year, x.month, 1)
+print("First day of previous month: ", h)
+y = date(today.year, today.month, 1) - relativedelta(days = 1)
+print("Last day of previous month: ", y)                       
