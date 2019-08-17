@@ -53,3 +53,21 @@ else:
     print("Previous friday was on: ", lastFriday)
     nextFriday = now + relativedelta(weekday = FR(+1))
     print("Next friday will be on: ", nextFriday)
+---------------------------------------------------------------------------
+Q5.
+Print first, second and present date where firstdate is the first day of that present year, second date is last day of previous month and the present date is today's date.
+
+----------------------------------------------------------------------------
+
+from datetime import datetime
+from datetime import date
+from dateutil.relativedelta import relativedelta, FR
+#now = date(2020, 2, 16) 
+#print(now.weekday())
+now = date.today()
+first_date = date(now.year, 1, 1)
+print("The first date is: ", first_date.strftime("%d-%b-%Y"))
+print("Present date: ", now.strftime("%d-%b-%Y"))
+second_date = date(now.year, now.month, 1) - relativedelta(days = 1)
+print("The second date is: ", second_date.strftime("%d-%b-%Y"))
+----------------------------------------------------------------------
