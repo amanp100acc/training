@@ -33,4 +33,23 @@ x = (today - relativedelta(months = 1))
 h = date(x.year, x.month, 1)
 print("First day of previous month: ", h)
 y = date(today.year, today.month, 1) - relativedelta(days = 1)
-print("Last day of previous month: ", y)                       
+print("Last day of previous month: ", y) 
+
+Q4.
+Print Previous and next friday date. If today is a friday, print today's and previous friday date.
+----------------------------------------------------------------------------------------------------
+
+from datetime import datetime
+from datetime import date
+from dateutil.relativedelta import relativedelta, FR
+now = date(2019, 8, 16)
+#now = date.today()
+if now.weekday() == 4:
+    print("Today is a friday")
+    lastFriday = now + relativedelta(weeks = -1, weekday = FR(-1))
+    print("Previous friday was on: ", lastFriday)
+else:
+    lastFriday = now + relativedelta(weekday = FR(-1))
+    print("Previous friday was on: ", lastFriday)
+    nextFriday = now + relativedelta(weekday = FR(+1))
+    print("Next friday will be on: ", nextFriday)
