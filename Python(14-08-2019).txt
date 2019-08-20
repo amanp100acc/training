@@ -110,4 +110,41 @@ for i in j:
         m.append(i)
         
 print(m[2])
+------------------------------------------------------------------------------
+Q1) Create a txt file, write into the text file, read the text file, count the total number of words, find the frequency of
+a specific word and replace a word with another
+
+with open('abc.txt', 'w') as f1:
+    f1.write("Apple is a fruit\n")
+    f1.write("It is a healthy food\n")
+    f1.write("Apple a day keeps doctor away\n")
+    f1.write("Hence, eat an apple daily to stay healthy")
+total_count = 0
+word_count = 0
+l = []
+s = ''
+with open('abc.txt', 'r') as f3:
+    all_text = f3.read()
+    f3.seek(0)
+#with open('abc.txt', 'r') as f3:
+    for line in f3:
+        x = line.split(' ')
+        total_count += len(x)
+    print(total_count)
+    req_word = input("Enter the word to know its count in the text: ")
+    f3.seek(0)
+    for line in f3:
+        words = line.split()
+        for word in words:
+            if (req_word.lower() == word.lower()):
+                word_count += 1
+    print(word_count)
+wordToReplace = input("Enter the word you want to replace: ")
+with open('abc.txt', 'w') as f5:
+    if(wordToReplace in all_text):
+        new_word = input("Enter the word with which you want to replace : ")
+        all_text = all_text.replace(wordToReplace, new_word)
+    else:
+        print("Word not present")
+    f5.write(all_text)
 
