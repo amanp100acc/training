@@ -111,7 +111,7 @@ for i in j:
         
 print(m[2])
 ------------------------------------------------------------------------------
-Q1) Create a txt file, write into the text file, read the text file, count the total number of words, find the frequency of
+Q7) Create a txt file, write into the text file, read the text file, count the total number of words, find the frequency of
 a specific word and replace a word with another
 
 with open('abc.txt', 'w') as f1:
@@ -147,4 +147,6 @@ with open('abc.txt', 'w') as f5:
     else:
         print("Word not present")
     f5.write(all_text)
+    -------------------------------------------------------------------------------------------
+    
 
