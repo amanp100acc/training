@@ -1,0 +1,47 @@
+Q1. Write a recursive function which accepts two arguments in which first argument is the starting number and the next argument
+is the number of next even integers to be printed. Also if the first argument is odd, the output should start from the next even number. 
+------------------------------------------------------------------------
+def even(s,n):
+    if n != 0:
+        s = s + 2
+        n = n - 1
+        print(s)
+        even(s,n)
+    else:
+        return
+    
+even(0, 10)             //starting from even no.
+--------------------------------------------------------------------------
+def even(s,n):
+    if s % 2 != 0:
+        s -= 1
+        even(s,n)
+    else:
+        if n != 0:
+            s = s + 2
+            n = n - 1
+            print(s)
+            even(s,n)
+        else:
+            return    
+even(3, 10)               //starting from odd no.
+
+------------------------------------------------------------------------------
+def odd(s,n):
+    if s % 2 == 0:
+        s -= 1
+        odd(s,n)
+    else:
+        if n != 0:
+            s = s + 2
+            n = n - 1
+            print(s)
+            odd(s,n)
+        else:
+            return
+    
+odd(0, 10)                  //Code to print odd nos. even if starting from even no.
+
+------------------------------------------------------------------------------------
+    
+    
