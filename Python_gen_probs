@@ -70,3 +70,20 @@ def odd(s,n):
             print(s)
 odd(0,10)
 --------------------------------------------------------------------------------------
+Q3.
+Print the triangle of stars with a python code.
+
+def star(t, n = 1):
+    while t != 0:
+        print(' ' * (t - 1), '* ' * n)
+        t -= 1
+        n += 1
+        
+star(5)
+
+def star(t, n = 2):
+    if t != 0:
+        print(' ' * (t - 1), '* ' * n)
+        t -= 1
+        n += 1
+        star(t,n)
