@@ -131,3 +131,15 @@ else:
     for i in range(n):
         print(fib(i))
 ---------------------------------------------------------------------------
+Q5.
+Find factorial of a number with and without recursion.
+---------------------------------------------------------------------------
+Recursion:
+
+def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return (n * fact(n - 1))
+
+print(fact(5))
