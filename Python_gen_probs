@@ -81,9 +81,53 @@ def star(t, n = 1):
         
 star(5)
 
-def star(t, n = 2):
+def star(t, n = 1):
     if t != 0:
         print(' ' * (t - 1), '* ' * n)
         t -= 1
         n += 1
         star(t,n)
+-------------------------------------------------------------------------------
+Q4.
+Print Fibonacci series with and without recursion.
+-------------------------------------------------------------------------------
+Recursion:
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return (fib(n-1) + fib(n - 2))
+
+n = int(input("Enter the No. of elements you want in fibonacci series: "))
+if n <= 0:
+    print("Enter a number greater than 0")
+else:
+    for i in range(n):
+        print(fib(i))
+---------------------------------------------------------------------------------
+Without recursion:
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        n1 = 0
+        n2 = 1
+        while n != 1:
+            n3 = n1 + n2
+            n1,n2 = n2,n3
+            n -= 1
+        return n3
+
+n = int(input("Enter the No. of elements you want in fibonacci series: "))
+if n <= 0:
+    print("Enter a number greater than 0")
+else:
+    for i in range(n):
+        print(fib(i))
+---------------------------------------------------------------------------
