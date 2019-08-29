@@ -143,3 +143,18 @@ def fact(n):
         return (n * fact(n - 1))
 
 print(fact(5))
+
+Without recursion:
+
+def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        n1 = n
+        while n != 1:
+            n2 = n1 * (n1 - 1)
+            n1 = n2
+            
+            n -= 1
+                    return 
+print(fact(5))
