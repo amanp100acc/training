@@ -171,3 +171,43 @@ def star(t):
         
 n = int(input("Enter the diagonal length of your rhombus: "))
 star(n)
+--------------------------------------------------------------------
+Q8.
+Take a file as input in your program that contains sudoku numbers of a 9*9 grid in horizontal and vertical manner and check if it is
+correct. Respond with appropriate messages in both the cases and write the same file in a new file along with the word 'Correct' in the 
+last line if it's correct.
+------------------------------------------------------------------------
+
+while True:
+    prompt = input("\n Hello to Sudoku valitator,"
+    "\n \n Please type in the path to your file and press 'Enter': ")
+    try:
+        sudoku = open(prompt, 'r').readlines()
+    except FileNotFoundError:
+        print("Wrong file or file path")
+    else:
+        break
+    
+sudoku = open(prompt, 'r').readlines()
+print(sudoku)
+
+def check(game):
+    n = len(game)
+    if n < (1):
+        return False
+
+    for i in range(0, n):
+        horizontal = []
+        vertical = []
+        for k in range(0, n):
+
+            if game[k][i] in vertical:
+                return ("File checked for errors. Your options are wrong!")
+            vertical.append(game[k][i])
+
+            if game[i][k] in horizontal:
+                return ("File checked for errors. Your options are wrong!")
+            horizontal.append(game[i][k])
+    return ("File checked for errors. Your options are correct!")
+print (check(sudoku))
+
