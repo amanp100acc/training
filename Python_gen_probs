@@ -172,7 +172,7 @@ def star(t):
 n = int(input("Enter the diagonal length of your rhombus: "))
 star(n)
 --------------------------------------------------------------------
-Q8.
+Q7.
 Take a file as input in your program that contains sudoku numbers of a 9*9 grid in horizontal and vertical manner and check if it is
 correct. Respond with appropriate messages in both the cases and write the same file in a new file along with the word 'Correct' in the 
 last line if it's correct.
@@ -210,4 +210,20 @@ def check(game):
             horizontal.append(game[i][k])
     return ("File checked for errors. Your options are correct!")
 print (check(sudoku))
+---------------------------------------------------------------------------------
+Q8. Find if the number entered from console is an armstrong number.
 
+def check_armstrong(num, x):
+    tmp = num
+    sum = 0
+    while num != 0:
+        digit = num % 10
+        sum += digit ** x
+        num = num // 10
+    if tmp == sum:
+        return True
+    else:
+        return False
+num = input("Enter the number: ")
+print(check_armstrong(int(num),len(num)))
+-----------------------------------------------------------------------
