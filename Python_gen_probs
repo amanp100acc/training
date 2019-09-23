@@ -227,3 +227,17 @@ def check_armstrong(num, x):
 num = input("Enter the number: ")
 print(check_armstrong(int(num),len(num)))
 -----------------------------------------------------------------------
+Q9. Check if two strings are anagrams.
+
+def check_anagram(s1, s2):
+    if sorted(s1.lower()) == sorted(s2.lower()):
+        return "Strings are anagram"
+    else:
+        return "Not anagram"
+
+s1 = 'Anagram'
+#print(sorted(s1.lower()))
+s2 = 'nagaRam'
+#print(sorted(s2.lower()))
+print(check_anagram(s1,s2))
+---------------------------------------------------------------------------------------------------------------------------------------------
