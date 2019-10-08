@@ -1,0 +1,17 @@
+Problem set 1
+----------------------
+Q1.
+x = 10
+y = 7
+z = 5
+l = [x,y,z]
+l1 = []
+for i in l:
+    if i % 2 != 0:
+        l1.append(i)
+print(l1)
+l1.sort()
+print(l1)
+print(l1[-1])
+
+Q2.
