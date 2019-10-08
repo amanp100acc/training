@@ -9,9 +9,34 @@ l1 = []
 for i in l:
     if i % 2 != 0:
         l1.append(i)
+    else:
+        print("No odd numbers present")
+        exit()
 print(l1)
 l1.sort()
 print(l1)
 print(l1[-1])
 
 Q2.
+def right_justify(s):
+    print((70 - len(s)) * ' ',s)
+
+right_justify('Cigna')
+
+Q3.
+print("Enter 10 numbers: ")
+l = []
+for i in range(10):
+    x = int(input())
+    l.append(x)
+l1 = []
+for i in l:
+    if i % 2 != 0:
+        l1.append(i)
+    else:
+        print("No odd numbers present")
+        exit()
+print(l1)
+l1.sort()
+print(l1)
+print(l1[-1])
