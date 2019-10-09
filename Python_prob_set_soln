@@ -92,6 +92,25 @@ def gcd(a,b):
         
 print(gcd(184,8))
 
-Q2.
+Q6.
+
+def findanEven(l):
+    try:
+        c = 0
+        for i in l:
+            if i % 2 == 0:
+                c = 1
+                return i
+        if c == 1:
+            pass
+        else:
+            raise ValueError()
+    except:
+        return "No even numbers in the list"
+    
+print(findanEven([1,5,3,7]))
+
+Q7.
+
 
 
