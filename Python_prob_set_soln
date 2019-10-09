@@ -77,6 +77,21 @@ def getratios(vect1, vect2):
 vect1 = [20,30,40,50]
 vect2 = [2,10,20,5]
 print(getratios(vect1,vect2))
+----------------------------------------------
+Problem Set 2
+----------------------------------------------
+Q1.
+def gcd(a,b):
+    if b == 0:
+        return a
+    else:
+        r = a % b
+        a = b
+        b = r
+        return gcd(a,b)
+        
+print(gcd(184,8))
 
-Q9.
+Q2.
+
 
