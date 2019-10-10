@@ -92,6 +92,39 @@ def gcd(a,b):
         
 print(gcd(184,8))
 
+Q3.
+#Recursion
+def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n*fact(n -1)
+print(fact(5))
+#without recursion
+def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        n1 = n
+        for i in range(1, n):
+            nth = n1 * (n - i)
+            n1 = nth
+        return n1
+print(fact(6))
+
+Q4.
+x = 10011
+s = str(x)
+s1 = s[::-1]
+sum = 0
+for i in range(len(s1)):
+    if s1[i] == '1':
+        sum += 2 ** i
+    else:
+        sum += 0
+print(sum)
+Q5.
+
 Q6.
 
 def findanEven(l):
@@ -111,6 +144,26 @@ def findanEven(l):
 print(findanEven([1,5,3,7]))
 
 Q7.
+def isPalindrome(s):
+    if s.lower().replace(" ", "") == s[::-1].lower().replace(" ", ""):
+        print("True")
+    else:
+        print("False")
+isPalindrome("Ma lay ala m")
+
+Q8.
+def eval_loop(l):
+    x = input("Enter the expression: ")
+    if x == 'Done':
+        print(l[-1])
+    else:
+        y = eval(x)
+        print(y)
+        l.append(y)
+        eval_loop(l)
+l = []
+eval_loop(l)
+
 
 
 
