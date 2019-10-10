@@ -92,6 +92,15 @@ def gcd(a,b):
         
 print(gcd(184,8))
 
+Q2.
+def is_Power(a,b):
+    if a == b:
+        return True
+    if b == 0 or b == 1:
+        return False
+    return ((a%b == 0) and is_Power(a / b, b))
+print(is_Power(16,8))
+
 Q3.
 #Recursion
 def fact(n):
