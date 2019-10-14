@@ -13,3 +13,12 @@ s1 = 'Aaagggggramm'
 print(s1[0])
 print(check(s1, 'g'))
 -------------------------------------------------------------------------
+Q2.
+with open('xyz.txt', 'r') as f:
+    all_text = f.readlines()
+    for i in all_text:
+        if 'abc' in i:
+            c += 1
+        else:
+            c += 0
+    print(c)
