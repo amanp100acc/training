@@ -222,6 +222,21 @@ s = input("Enter the string of forbidden letters: ")
 print(avoids(l,s))
 
 Q7.
+def using_only(w, s):
+    c = 0
+    for i in w.replace(' ', ''):
+        if i.lower() in s.lower():
+            pass
+        else:
+            c += 1
+    if c == 0:
+        return True
+    else:
+        return False
+
+print(using_only("Hoe alfalfa", 'acefhlo'))
+
+Q8.
 
 
 
