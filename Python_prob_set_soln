@@ -172,6 +172,23 @@ def eval_loop(l):
         eval_loop(l)
 l = []
 eval_loop(l)
+--------------------------------
+Problem Set 3
+--------------------------------
+Q3,Q4.
+def has_no_e(l):
+    c = 0
+    for i in l:
+        if 'e' not in i.lower():
+            print(i)
+            c += 1
+        else:
+            c += 0
+    x = c * 100 / len(l)
+    return x
+print(has_no_e(['araam', 'de', 'kahan', 'hai', 'BETA', 'Ego']))
+
+Q5.
 
 
 
