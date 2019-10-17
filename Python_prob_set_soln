@@ -311,6 +311,24 @@ print(a.area())
 print(b.area())
 
 Q2.
+class Person:
+    def getgender(self):
+        pass
+class Male(Person):
+    def getgender(self):
+        return "Male"
+class FeMale(Person):
+    def getgender(self):
+        return "FeMale"
+
+c = Person()
+a = Male()
+b = FeMale()
+print(a.getgender())
+print(b.getgender())
+print(c.getgender())
+
+Q3.
 
 
 
