@@ -328,8 +328,25 @@ print(a.getgender())
 print(b.getgender())
 print(c.getgender())
 
-Q3.
+Q3. Prime numbers between two numbers.
 
+def prime(a, b):
+    for i in range(a, b + 1):
+        if i==1 or i==2 or i==3:
+            print(i)
+            continue
+        else:
+            for j in range(2, i):
+                if i % j != 0:
+                    f = 1
+                    continue
+                else:
+                    f = 0
+                    break
+            if f == 1:
+                print(i)
+                    
+prime(2,31)
 
 
 
