@@ -348,5 +348,84 @@ def prime(a, b):
                     
 prime(2,31)
 
+Q7.
+class Temperature:
+    def __init__(self,temperature):
+        self.temperature = temperature
+    def _str__(self):
+        pass
+    def convertToFahren(self):
+        pass
+    def convertToKelvin(self):
+        pass
+    def convertToCelsius(self):
+        pass
+class Celsius(Temperature):
+    def _str__(self):
+        return ('%s degrees Celsius'%self.temperature)
+    def aboveFreezing(self):
+        if self.temperature > 0:
+            return True
+    def convertToFahren(self):
+        x = (self.temperature * 9 / 5) + 32
+        return x
+    def convertToKelvin(self):
+        y = self.temperature + 273.15
+        return y
+    def convertToCelsius(self):
+        return self.temperature
+class Fahrenheit(Temperature):
+    def _str__(self):
+        return ("%s degrees Fahrenheit"%self.temperature)
+    def aboveFreezing(self):
+        if self.temperature > 32:
+            return True
+    def convertToFahren(self):
+        return self.temperature
+    def convertToKelvin(self):
+        y = (self.temperature -32) * 5 / 9 + 273.15
+        return y
+    def convertToCelsius(self):
+        x = (self.temperature -32) * 5 / 9
+        return x
+class Kelvin(Temperature):
+    def _str__(self):
+        return ("%s degrees Kelvin"%self.temperature)
+    def aboveFreezing(self):
+        if self.temperature > 273.15:
+            return True
+    def convertToFahren(self):
+        x = (self.temperature - 273.15) * 9 / 5 + 32
+        return x
+    def convertToKelvin(self):
+        return self.temperature
+    def convertToCelsius(self):
+        y = self.temperature - 273.15
+        return y
+
+t1 = Celsius(27)
+t2 = Fahrenheit(98)
+t3 = Kelvin(54)
+print(t1.convertToCelsius())
+print(t1.convertToKelvin())
+print(t1.convertToFahren())
+print(t1._str__())
+print(t1.aboveFreezing())
+print(t2.convertToCelsius())
+print(t2.convertToKelvin())
+print(t2.convertToFahren())
+print(t2._str__())
+print(t2.aboveFreezing())
+print(t3.convertToCelsius())
+print(t3.convertToKelvin())
+print(t3.convertToFahren())
+print(t3._str__())
+print(t3.aboveFreezing())
+
+
+
+
+        
+
 
 
