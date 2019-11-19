@@ -1,0 +1,28 @@
+Q1.Removing duplicates from table having a primary key.
+
+drop table sales;
+create table sales(cid int primary key, f_name varchar(20), l_name varchar(20), email varchar(50));
+insert into sales(cid, f_name, l_name, email) values (1,'aman', 'prakash', 'aman@gmmai.com');
+insert into sales(cid, f_name, l_name, email) values (2,'saurav', 'sahoo', 'saurav@gmmai.com');
+insert into sales(cid, f_name, l_name, email) values (3,'kalyani', 'rarare', 'karare@gmmai.com');
+insert into sales(cid, f_name, l_name, email) values (4,'saurav', 'sahoo', 'saurav@gmmai.com');
+insert into sales(cid, f_name, l_name, email) values (5,'aman', 'prakash', 'aman@gmmai.com');
+select * from sales;
+delete from sales where cid in (select cid from (SELECT 
+        cid, 
+        f_name, 
+        l_name, 
+        email, 
+        ROW_NUMBER() OVER (
+            PARTITION BY 
+                f_name, 
+                l_name, 
+                email
+            ORDER BY 
+                f_name, 
+                l_name, 
+                email
+        ) row_num
+     FROM 
+        sales) where row_num > 1);
+select * from sales;
