@@ -49,3 +49,5 @@ insert into dept values(3, 'IT', 102);
 
 select * from emp;
 select * from dept;
+-----Query to find nth highest salary from employee table--------
+select sal from (select sal from (select distinct sal from emp order by sal desc) where rownum <= 4 order by sal) where rownum = 1;
