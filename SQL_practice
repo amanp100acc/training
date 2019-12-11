@@ -26,3 +26,26 @@ delete from sales where cid in (select cid from (SELECT
      FROM 
         sales) where row_num > 1);
 select * from sales;
+---------------------------------------------------------------------------
+Employee and Department tables for practice.
+---------------------------------------------------------------------------
+drop table emp;
+create table emp(empid int, empname varchar(20), sal int);
+insert into emp values(101, 'A', 1000);
+insert into emp values(102, 'B', 500);
+insert into emp values(103, 'C', 800);
+insert into emp values(104, 'D', 2000);
+insert into emp values(105, 'E', 5000);
+insert into emp values(101, 'A', 1000);
+insert into emp values(102, 'B', 500);
+drop table dept;
+create table dept(deptid int, deptname varchar(20), empid int);
+insert into dept values(1, 'ECE', 101);
+insert into dept values(1, 'ECE', 105);
+insert into dept values(2, 'CSE', 103);
+insert into dept values(2, 'CSE', 101);
+insert into dept values(3, 'IT', 101);
+insert into dept values(3, 'IT', 102);
+
+select * from emp;
+select * from dept;
