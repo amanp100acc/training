@@ -51,3 +51,31 @@ select * from emp;
 select * from dept;
 -----Query to find nth highest salary from employee table--------
 select sal from (select sal from (select distinct sal from emp order by sal desc) where rownum <= 4 order by sal) where rownum = 1;
+
+----------------------------------------------------------------------
+drop table A;
+drop table B;
+create table A(c1 varchar(10));
+insert into A values('X');
+insert into A values('X');
+insert into A values('X');
+insert into A values('Y');
+insert into A values('Y');
+create table B(c1 varchar(10));
+insert into B values('X');
+insert into B values('X');
+insert into B values(NULL);
+insert into B values('Y');
+insert into B values(NULL);
+
+select * from A;
+select * from B;
+drop table Anew;
+drop table Bnew;
+create table Anew as (select c1, row_number() over(order by c1) as RN from A);
+create table Bnew as (select c1, row_number() over(partition by c1 order by c1) as R_N from B);
+select * from Anew;
+select * from Bnew;
+select distinct Anew.c1, Bnew.c1 from Anew full outer join Bnew on Anew.RN = Bnew.R_N order by 1;
+-------------------------------------------------------------------------------------------------
+
