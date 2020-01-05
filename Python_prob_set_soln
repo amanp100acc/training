@@ -10,12 +10,14 @@ for i in l:
     if i % 2 != 0:
         l1.append(i)
     else:
-        print("No odd numbers present")
-        exit()
-print(l1)
-l1.sort()
-print(l1)
-print(l1[-1])
+        pass
+if len(l1) > 0:
+    print(l1)
+    l1.sort()
+    print(l1)
+    print(l1[-1])
+else:
+    print("No odd no. present")
 
 Q2.
 def right_justify(s):
@@ -34,12 +36,14 @@ for i in l:
     if i % 2 != 0:
         l1.append(i)
     else:
-        print("No odd numbers present")
-        exit()
-print(l1)
-l1.sort()
-print(l1)
-print(l1[-1])
+        pass
+if len(l1) > 0:
+    print(l1)
+    l1.sort()
+    print(l1)
+    print(l1[-1])
+else:
+    print("No odd no. present")
 
 Q5.
 num = int(input("Enter the number: "))
